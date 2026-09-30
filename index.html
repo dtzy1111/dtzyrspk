@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DTZY | LIST HARGA</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, #24113f 0%, #09090d 45%, #030305 100%);
+            color: white;
+        }
+
+        /* HALAMAN AWAL */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 430px;
+            padding: 40px 25px;
+            text-align: center;
+
+            background: rgba(20, 20, 30, 0.88);
+            border: 1px solid rgba(180, 80, 255, 0.35);
+            border-radius: 25px;
+
+            box-shadow:
+                0 0 30px rgba(170, 0, 255, 0.20),
+                inset 0 0 25px rgba(255, 255, 255, 0.02);
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 900;
+            color: #c75cff;
+
+            text-shadow:
+                0 0 10px #c75cff,
+                0 0 30px #7b00ff;
+
+            margin-bottom: 8px;
+        }
+
+        .username {
+            color: #aaa;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .welcome {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .main-btn {
+            width: 100%;
+            padding: 17px;
+            border: none;
+            border-radius: 14px;
+
+            background: linear-gradient(90deg, #8a2be2, #d94cff);
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            box-shadow: 0 0 25px rgba(190, 50, 255, 0.4);
+            cursor: pointer;
+        }
+
+        .main-btn:active {
+            transform: scale(0.97);
+        }
+
+
+        /* PRICELIST */
+        #pricelist {
+            display: none;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .price-container {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+
+            color: #d45cff;
+
+            text-shadow:
+                0 0 10px #c020ff,
+                0 0 25px #7b00ff;
+
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        /* ITEM HARGA */
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px;
+            margin-bottom: 14px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(30, 20, 45, 0.95),
+                rgba(15, 15, 22, 0.95)
+            );
+
+            border: 1px solid rgba(195, 80, 255, 0.35);
+            border-radius: 16px;
+
+            text-decoration: none;
+            color: white;
+
+            box-shadow: 0 0 18px rgba(150, 0, 255, 0.10);
+
+            transition: 0.2s;
+        }
+
+        .price-item:hover {
+            transform: translateY(-3px);
+            border-color: #d45cff;
+            box-shadow: 0 0 25px rgba(190, 50, 255, 0.3);
+        }
+
+        .price-item:active {
+            transform: scale(0.97);
+        }
+
+        .product {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .small {
+            display: block;
+            color: #888;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 900;
+            color: #df70ff;
+        }
+
+        .back {
+            display: block;
+            width: 100%;
+
+            margin-top: 25px;
+            padding: 15px;
+
+            border: 1px solid #8d35b8;
+            border-radius: 13px;
+
+            background: transparent;
+            color: #d45cff;
+
+            font-weight: bold;
+            text-align: center;
+
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HALAMAN AWAL
+    ========================== -->
+
+    <section class="home" id="home">
+
+        <div class="box">
+
+            <div class="logo">
+                DTZY
+            </div>
+
+            <div class="username">
+                @HILNGRESPEK
+            </div>
+
+            <div class="welcome">
+                Selamat Datang 👋
+            </div>
+
+            <p class="desc">
+                Website resmi DTZY.<br>
+                Cek layanan dan pricelist kami
+                dengan mudah di sini.
+            </p>
+
+            <button class="main-btn" onclick="bukaPricelist()">
+                ✦ LIHAT PRICELIST
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HALAMAN PRICELIST
+    ========================== -->
+
+    <section id="pricelist">
+
+        <div class="price-container">
+
+            <h1 class="title">
+                DTZY PRICELIST
+            </h1>
+
+            <p class="subtitle">
+                Klik salah satu produk untuk order
+            </p>
+
+
+            <!-- NOKOS INDO -->
+            <a
+                class="price-item"
+                href="https://www.tiktok.com/@hilngrespek"
+                target="_blank"
+            >
+                <div>
+                    <span class="product">
+                        🇮🇩 NOKOS INDO
+                    </span>
+
+                    <span class="small">
+                        Klik untuk order
+                    </span>
+                </div>
+
+                <span class="price">
+                    8K
+                </span>
+            </a>
+
+
+            <!-- NOKOS SHOPE -->
+            <a
+                class="price-item"
+                href="https://www.tiktok.com/@hilngrespek"
+                target="_blank"
+            >
+                <div>
+                    <span class="product">
+                        🛒 NOKOS SHOPE
+                    </span>
+
+                    <span class="small">
+                        Klik untuk order
+                    </span>
+                </div>
+
+                <span class="price">
+                    4K
+                </span>
+            </a>
+
+
+            <!-- NOKOS TELE -->
+            <a
+                class="price-item"
+                href="https://www.tiktok.com/@hilngrespek"
+                target="_blank"
+            >
+                <div>
+                    <span class="product">
+                        ✈️ NOKOS TELE
+                    </span>
+
+                    <span class="small">
+                        Klik untuk order
+                    </span>
+                </div>
+
+                <span class="price">
+                    9K
+                </span>
+            </a>
+
+
+            <!-- NOKOS DLL -->
+            <a
+                class="price-item"
+                href="https://www.tiktok.com/@hilngrespek"
+                target="_blank"
+            >
+                <div>
+                    <span class="product">
+                        📦 NOKOS DLL
+                    </span>
+
+                    <span class="small">
+                        Harga / info → DM TikTok
+                    </span>
+                </div>
+
+                <span class="price">
+                    DM
+                </span>
+            </a>
+
+
+            <button class="back" onclick="kembali()">
+                ← KEMBALI
+            </button>
+
+            <div class="footer">
+                © 2026 DTZY • @HILNGRESPEK
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function bukaPricelist() {
+
+            document.getElementById("home").style.display = "none";
+
+            document.getElementById("pricelist").style.display = "block";
+
+            window.scrollTo(0, 0);
+        }
+
+
+        function kembali() {
+
+            document.getElementById("pricelist").style.display = "none";
+
+            document.getElementById("home").style.display = "flex";
+
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+
+</body>
+</html>
